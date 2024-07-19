@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daisy Animal Clinic</title>
+    <style type="text/css">body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+    
+    header {
+        background-color: #00539CFF;
+        color: #fff;
+        text-align: center;
+        padding:  20px;
+    
+    }
+    
+    header .btn {
+        background-color: #EEA47FFF;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    
+    .services-section, .features-section, .faq-section, .contact-section {
+        
+        text-align: center;
+        padding:100px 20px;
+    }
+    
+    .services-section {
+        background-color: #00539CFF;
+        color:#fff;
+    }
+    
+    .services-section .service-item {
+        margin-top: 20px;
+    }
+    
+    .services-section .btn {
+        background-color: #EEA47FFF;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    
+    .features {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .features .feature {
+        flex: 1;
+        margin: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    
+    .faq-section .faq {
+        margin-top: 20px;
+        text-align: left;
+    }
+    .contact-section{
+    background-color:#00539CFF;
+    
+    }
+    
+    .contact-section form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    
+    .contact-section form input, .contact-section form textarea {
+        width: 100%;
+        max-width: 500px;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    
+    .contact-section form .btn {
+        background-color: #00539CFF;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .contact-section .map {
+        margin-top: 40px;
+    }
+    
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+    }
+    
+    footer .social-media img {
+        width: 30px;
+        margin: 0 10px;
+    }
+    
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+    
+    .menu {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+    }
+    
+    .menu li {
+        display: inline-block;
+        margin-right: -5px;
+        position: relative;
+        padding: 15px 20px;
+    }
+    
+    .menu a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+    }
+    
+    .menu a:hover {
+        background-color: #EEA47FFF;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+    
+    section {
+       
+        padding: 20px 0;
+        
+    }
+    
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+    }
+    
+    .social-media {
+        margin-top: 20px;
+    }
+    
+    .social-media img {
+        width: 30px;
+        margin: 0 10px;
+    }
+    
+    :root {
+        --clr-primary: hsl(20, 80%, 60%);
+        --clr-primary-hover: hsl(20, 80%, 65%);
+        --transition: 0.5s ease;
+    }
+    
+    .features h1 {
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        font-size: 2.75rem;
+        letter-spacing: -0.05em;
+        font-weight: 700;
+        margin-bottom: 2.5rem;
+        text-shadow: 1px 1px 0px hsl(40, 20%, 90%), -1px 1px 0px hsl(40, 20%, 90%);
+        &:after {
+            content: "";
+            position: absolute;
+            opacity: 0.5;
+            z-index: -1;
+            bottom: 12px;
+            left: 0;
+            right: 0;
+            background: var(--clr-primary);
+            height: 12px;
+            width: 100%;
+        }
+    }
+    .container1 {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        gap: 1.5rem;
+    }
+    .hoverbox {
+        position: relative;
+        background: hsla(220, 10%, 20%, 0.9);
+        padding: 32px 28px;
+        overflow: hidden;
+        border-radius: 0px;
+        transition: 0.35s ease-in;
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: auto;
+            right: 0;
+            width: 0%;
+            height: 0.35rem;
+            background: var(--clr-primary);
+            transition: var(--transition);
+        }
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            transition: var(--transition);
+            filter: blur(1px) saturate(0);
+        }
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.125rem;
+            font-weight: 300;
+        }
+        a {
+            position: relative;
+            color: #fff;
+            text-decoration: unset;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.35s;
+            &:after {
+                content: ">";
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 1rem;
+                border: 2px solid #fff5;
+                border-radius: 50%;
+                width: 1.5rem;
+                height: 1.5rem;
+                transition: all 0.35s, color 0s;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                width: 0rem;
+                height: 0.125rem;
+                background: #fff;
+                right: 0.75rem;
+                top: calc(50% - 0.025rem);
+                transition: 0.35s;
+            }
+        }
+        &:hover {
+            background: hsla(220, 20%, 20%, 0.75);
+            box-shadow: 0px 16px 24px rgba(0, 15, 0, 0.1);
+            &:after {
+                width: 100%;
+                left: 0;
+                right: auto;
+            }
+            & a:after {
+                border-color: transparent;
+                margin-left: 2rem;
+                transition: all 0.35s, color 0s;
+            }
+            & a:before {
+                width: 1.5rem;
+                background: var(--clr-primary);
+            }
+            & a {
+                color: var(--clr-primary);
+                &:hover {
+                    color: var(--clr-primary-hover);
+                    &:before {
+                        background: var(--clr-primary-hover);
+                    }
+                }
+            }
+            img {
+                transform: scale(1.2) rotate(-5deg);
+                filter: blur(8px) saturate(0);
+            }
+        }
+    }
+    
+    @import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700&display=swap");
+    body {
+        background: #fafafa;
+    }
+    .accordion {
+        display: flex;
+        flex-direction: column;
+        font-family: "Sora", sans-serif;
+        max-width: 991px;
+        min-width: 320px;
+        margin: 50px auto;
+        padding: 0 50px;
+    }
+    .accordion h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+    .accordion-item {
+        margin-top: 16px;
+        border: 1px solid #fcfcfc;
+        border-radius: 6px;
+        background: #ffffff;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    }
+    .accordion-item .accordion-item-title {
+        position: relative;
+        margin: 0;
+        display: flex;
+        width: 100%;
+        font-size: 15px;
+        cursor: pointer;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        padding: 14px 20px;
+        box-sizing: border-box;
+        align-items: center;
+    }
+    .accordion-item .accordion-item-desc {
+        display: none;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 300;
+        color: #444;
+        border-top: 1px dashed #ddd;
+        padding: 10px 20px 20px;
+        box-sizing: border-box;
+    }
+    .accordion-item input[type="checkbox"] {
+        position: absolute;
+        height: 0;
+        width: 0;
+        opacity: 0;
+    }
+    .accordion-item input[type="checkbox"]:checked ~ .accordion-item-desc {
+        display: block;
+    }
+    .accordion-item
+        input[type="checkbox"]:checked
+        ~ .accordion-item-title
+        .icon:after {
+        content: "-";
+        font-size: 20px;
+    }
+    .accordion-item input[type="checkbox"] ~ .accordion-item-title .icon:after {
+        content: "+";
+        font-size: 20px;
+    }
+    .accordion-item:first-child {
+        margin-top: 0;
+    }
+    .accordion-item .icon {
+        margin-left: 14px;
+    }
+    
+    @media screen and (max-width: 767px) {
+        .accordion {
+            padding: 0 16px;
+        }
+        .accordion h1 {
+            font-size: 22px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <ul class="menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#features">Why Choose Us</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#price">Price</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                </ul>
+            </nav>
+            
+         
+        <div class="header-content">
+            <h1>Daisy Animal Clinic</h1>
+            <p>Providing the best care for your pets and providing regular wellness examinations, 
+                immunizations, and prophylactic treatments to preserve the animals' general health 
+                and wellbeing.</p>
+            <a href="#services" class="btn">Find Out More</a>
+    
+        </div>
+    </header>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            
+            <div class="service-item">
+                
+                <h3>Comprehensive Animal Treatment</h3>
+                <p>The Animal Wellness Clinic is a full-service facility equipped 
+                    with the latest medical technologies and staffed by a team of passionate, 
+                    highly trained veterinary professionals. Their mission is to provide exceptional,
+                     compassionate care that promotes the long-term health and wellbeing of every patient 
+                     that walks through their doors.</p>
+                <a href="#discover-more" class="btn">Discover More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <h1>OUR SERVICES</h1>
+        <div class="container1">
+            <div class="hoverbox">
+                <img class="hoverbox__image" src="images/download (1).jpeg" alt="Test Img">
+                <h3>Grooming</h3>
+                <p>Our grooming services will keep your pet looking and feeling great. We offer baths, haircuts, nail trimming, and more.</p>
+                <a href="">More infos</a>
+            </div>
+            <div class="hoverbox">
+                <img class="hoverbox__image" src="images/shelter.jpeg" alt="Test Img">
+                <h3>Shelter</h3>
+                <p>We provide a safe and comfortable shelter for animals in need. Our facilities are designed to make your pet feel at home.</p>
+                <a href="">More infos</a>
+            </div>
+            <div class="hoverbox">
+                <img class="hoverbox__image" src="images/training.jpeg" alt="Test Img">
+                <h3>Training</h3>
+                <p>We provide a wide range of training programs, from basic obedience to advanced training, all customized to fit your pet's needs.</p>
+                <a href="">More infos</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+       <div class="accordion">
+        <h1>Frequently Asked Questions</h1>
+        <div class="accordion-item">
+            <input type="checkbox" id="accordion1">
+            <label for="accordion1" class="accordion-item-title"><span class="icon"></span>What are the clinic's operating hours?</label>
+            <div class="accordion-item-desc">DAISY Animal Clinic is open Monday to Friday from 8:00 AM to 6:00 PM, and on Saturdays from 9:00 AM to 2:00 PM. We are closed on Sundays and public holidays</div>
+        </div>
+    
+        <div class="accordion-item">
+            <input type="checkbox" id="accordion2">
+            <label for="accordion2" class="accordion-item-title"><span class="icon"></span>How do I book an appointment?</label>
+            <div class="accordion-item-desc"> You can book an appointment by calling our clinic or using our online booking system on our website.</div>
+        </div>
+    
+        <div class="accordion-item">
+            <input type="checkbox" id="accordion3">
+            <label for="accordion3" class="accordion-item-title"><span class="icon"></span>Do you accept walk-ins?</label>
+            <div class="accordion-item-desc">While we do accept walk-ins, we highly recommend making an appointment to ensure timely service.</div>
+        </div>
+    
+        <div class="accordion-item">
+            <input type="checkbox" id="accordion4">
+            <label for="accordion4" class="accordion-item-title"><span class="icon"></span>What services do you offer?</label>
+            <div class="accordion-item-desc">We offer a wide range of services including vaccinations, dental care, surgery, diagnostics, emergency care, and wellness exams</div>
+        </div>
+    
+        <div class="accordion-item">
+            <input type="checkbox" id="accordion5">
+            <label for="accordion5" class="accordion-item-title"><span class="icon"></span>Do you offer flea, tick, and heartworm prevention?</label>
+            <div class="accordion-item-desc">Yes, we offer a variety of preventative treatments for fleas, ticks, and heartworms. Our veterinarians can help you choose the best option for your pet.</div>
+        </div>
+    
+    </div>
+        
+    </section>
+
+    
+
+
+    <footer>
+        <p>&copy; 2024 Daisy Animal Clinic. All rights reserved.</p>
+        <div class="social-media">
+           <a href="#"><img src="https://img.icons8.com/?size=100&id=118468&format=png&color=000000" alt="facebook"></a>
+            <a href="#"><img src="https://img.icons8.com/?size=100&id=fJp7hepMryiw&format=png&color=000000" alt="X"></a>
+            <a href="#"><img src="https://img.icons8.com/?size=100&id=eRJfQw0Zs44S&format=png&color=000000" alt="Instagram"></a>
+        </div>
+    </footer>
+    
+</body>
+</html>
